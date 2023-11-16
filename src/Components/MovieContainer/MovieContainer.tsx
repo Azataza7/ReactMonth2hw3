@@ -12,8 +12,8 @@ const MovieContainer: React.FC<Props> = ({movieList, onDelete}) => {
   return (
     <section>
       {movieList.map((movie) => (
-          <MovieItem key={movie.id} movie={movie} deleteItem={onDelete}/>
-        ))}
+        <MovieItem key={movie.id} movie={movie} deleteItem={onDelete}/>
+      ))}
     </section>
   );
 };

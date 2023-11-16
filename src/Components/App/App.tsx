@@ -1,6 +1,7 @@
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import {useState} from 'react';
+import {MovieProps} from '../../types';
 
 const App = () => {
   const [movieList, setMovieList] = useState([
@@ -14,9 +15,13 @@ const App = () => {
     setMovieList(updatedListMovie);
   };
 
+  const addMovieItem = (titleMovie: MovieProps) => {
+    setMovieList((prevState) => ([titleMovie, ...prevState]));
+  };
+
   return (
     <>
-      <AddMovieForm/>
+      <AddMovieForm onSubmit={addMovieItem}/>
       <MovieContainer movieList={movieList} onDelete={deleteMovieItem}/>
     </>
   );
