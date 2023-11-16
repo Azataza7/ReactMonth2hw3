@@ -6,7 +6,7 @@ interface Props {
 
 const JokeGenerateButton: React.FC<Props> = React.memo(({getItem}) => {
   const handleJokePromise = async () => {
-    return await getItem()
+    return await getItem();
   };
 
   return (
