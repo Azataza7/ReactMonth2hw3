@@ -9,10 +9,15 @@ const App = () => {
     {name: 'Movie', id: 3},
   ]);
 
+  const deleteMovieItem = (id) => {
+    const updatedListMovie = movieList.filter((movie) => movie.id !== id);
+    setMovieList(updatedListMovie);
+  };
+
   return (
     <>
       <AddMovieForm/>
-      <MovieContainer movieList={movieList}/>
+      <MovieContainer movieList={movieList} onDelete={deleteMovieItem}/>
     </>
   );
 };
