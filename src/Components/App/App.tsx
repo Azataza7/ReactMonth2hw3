@@ -1,7 +1,8 @@
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
 import MovieContainer from '../MovieContainer/MovieContainer';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {MovieProps} from '../../types';
+import JokeGenerator from '../JokeGenerator/JokeGenerator';
 
 const App = () => {
   const [movieList, setMovieList] = useState<MovieProps[]>([]);
@@ -25,6 +26,7 @@ const App = () => {
     <>
       <AddMovieForm onSubmit={addMovieItem}/>
       <MovieContainer movieList={movieList} onDelete={deleteMovieItem} changeItem={changeMovieItem}/>
+      <JokeGenerator/>
     </>
   );
 };
