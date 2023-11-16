@@ -4,15 +4,22 @@ import MovieItem from './MovieItem';
 
 interface Props {
   movieList: MovieProps[];
-  onDelete: () => void;
+  onDelete: (id: number) => void;
+  changeItem: (id: number, name: string) => void;
 }
 
-const MovieContainer: React.FC<Props> = ({movieList, onDelete}) => {
+const MovieContainer: React.FC<Props> = ({movieList, onDelete, changeItem}) => {
 
   return (
-    <section>
-      {movieList.map((movie) => (
-        <MovieItem key={movie.id} movie={movie} deleteItem={onDelete}/>
+    <section className="container-fluid d-flex flex-sm-column">
+      {movieList.map((movie, index) => (
+        <MovieItem
+          index={index}
+          key={movie.id}
+          movie={movie}
+          deleteItem={onDelete}
+          changeItem={changeItem}
+        />
       ))}
     </section>
   );

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {MovieProps} from '../../types';
 
 interface Props {
-  onSubmit: ({}) => void;
+  onSubmit: (movie: MovieProps) => void;
 }
 
 const AddMovieForm: React.FC<Props> = ({onSubmit}) => {
@@ -21,12 +21,13 @@ const AddMovieForm: React.FC<Props> = ({onSubmit}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-control d-flex" onSubmit={handleSubmit}>
       <input
+        className="p-1 w-75 m-1"
         type="text"
         value={item}
         onChange={(e) => setItem(e.target.value)}/>
-      <button className="add-btn">Add</button>
+      <button className="btn btn-primary">Add</button>
     </form>
   );
 };
