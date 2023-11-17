@@ -11,7 +11,7 @@ interface Props {
 const MovieItem: React.FC<Props> = React.memo(({movie, deleteItem, changeItem, index}) => {
   return (
     <div>
-      <span>Task:#{index + 1}</span>
+      <span>Movie:#{index + 1}</span>
       <input
         className="p-1 mt-3 m-2"
         type="text"
